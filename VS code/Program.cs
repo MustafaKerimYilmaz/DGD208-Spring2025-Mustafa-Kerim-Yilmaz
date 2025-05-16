@@ -1,14 +1,9 @@
-using System;
-using System.Threading.Tasks;
-
-namespace PetSimulatorGame
+﻿using System.Threading.Tasks;
+class Program
 {
-    class Program
+    static async Task Main(string[] args)
     {
-        static async Task Main(string[] args) // I wrote "async" so that R can use "await"
-        { 
-             Game game = new Game();
-             await game.GameLoop();
-        }
+        var game = new Game();
+        await game.GameLoop();
     }
 }
