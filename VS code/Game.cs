@@ -24,3 +24,16 @@ public class Game
     "229911278"
     );
 }
+public Game()
+{
+    _mainMenu = new Menu<string>("Main Menu", new List<string>
+    {
+        "Adopt a new pet",
+        "View your pets",
+        "Use an item on a pet",
+        "Show creator info"
+        "Exit"
+    }, item => item);
+}
+
+public async Task GameLoop()
