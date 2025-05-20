@@ -62,3 +62,31 @@ public class Game
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
     }
+
+    private async Task ProcessUserChoice(string choice)
+    {
+        if (choice == null) return;
+
+        if (choice == "Exit")
+        {
+            _isRunning = false;
+        }
+        else if (choice == "Adopt a new pet")
+        {
+            await AdoptPet();
+        }
+        else if (choice == "View your pets")
+        {
+            ViewPets();
+        }
+        else if (choice == "Use an item on a pet")
+        {
+            await UseItemOnPet();
+        }
+        else if (choice == "Show creator info")
+        {
+            ShowCreatorInfo();
+        }
+    }
+
+    private async Task AdoptPet()
