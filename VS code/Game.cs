@@ -90,3 +90,64 @@ public class Game
     }
 
     private async Task AdoptPet()
+{
+        var petTypeMenu = new Menu<PetType>("Select Pet Type",
+            Enum.GetValues(typeof(PetType)).Cast<PetType>().ToList(),
+            pt => pt.ToString());
+
+        var selectedType = petTypeMenu.ShowAndGetSelection();
+        if (selectedType == default) return;
+
+        Console.Clear();
+        Console.Write("Enter your pet's name: ");
+        string name = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            Console.WriteLine("Invalid name. Press any key to continue...");
+            Console.ReadKey();
+            return;
+        }
+
+        var newPet = new Pet(name, selectedType);
+
+  // For pet events
+        newPet.OnStatChanged += (message, stat, value) =>
+        {
+            Console.WriteLine($"[STAT CHANGE] {message}");
+            if (value <= 20)  // Warning: when stats are low
+            {
+                Console.WriteLine($"Warning: {newPet.Name}'s {stat} is getting low!");
+            }
+        };
+
+        newPet.OnDeath += (message) =>
+        {
+            Console.WriteLine($"[ALERT] {message}");
+            _pets.Remove(newPet);
+            Console.WriteLine($"{newPet.Name} has been removed from your pets.");
+        };
+
+        _pets.Add(newPet);
+
+        Console.WriteLine($"You've adopted {name} the {selectedType}!");
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
+
+        _ = StartPetStatDecay(newPet);
+    }
+
+    private async Task StartPetStatDecay(Pet pet)
+    {
+        while (pet.IsAlive && _isRunning)
+        {
+            await Task.Delay(3000);
+            pet.DecreaseStats();
+
+            if (!pet.IsAlive)
+            {
+                Console.WriteLine("Press any key to continue...");
+
+            }
+        }
+    }
