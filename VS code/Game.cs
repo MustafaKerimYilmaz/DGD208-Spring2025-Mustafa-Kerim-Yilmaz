@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.VisualBasic;
 public class StudentInfo
 {
     public string Name { get; }
@@ -151,3 +152,39 @@ public class Game
             }
         }
     }
+
+    private void ViewPets()
+    {
+        if (_pets.Count == 0)
+        {
+            Console.WriteLine("You don't have any pets yet!");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            return;
+        }
+
+        var petMenu = new Menu<Pet>("Your Pets", _pets, p => p.ToString());
+        var selectedPet = petMenu.ShowAndGetSelection();
+    }
+
+    private async Task UseItemOnPet()
+    {
+        if (_pets.Count == 0)
+        {
+            Console.WriteLine("You don't have any pets to use items on!");
+            Console.WriteLine("Press any key to continue...");
+            return;
+        }
+    }
+
+    var petMenu = new Menu<Pet>("Select a Pet",
+        _pets.Where(p => p.IsAlive).ToList(),
+        p => p.ToString());
+    var selectedPet = petMenu.ShowAndGetSelection();
+    if (selectedPet == null) return;
+
+    var compatibleItems = ItemDatabase.AllItems
+        .Where(item => item.CompatibleWith.Contains(selectedPet.Type))
+        .ToList();
+
+
