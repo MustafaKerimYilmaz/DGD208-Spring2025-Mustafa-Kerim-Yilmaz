@@ -213,7 +213,7 @@ public class Game
 
     private void ShowCreatorInfo()
     {
-         Console.Clear();
+        Console.Clear();
         Console.WriteLine($"Creator: {_studentInfo.Name}");
         Console.WriteLine($"Student Number: {_studentInfo.StudentNumber}");
         Console.WriteLine("\nPress any key to continue...");
