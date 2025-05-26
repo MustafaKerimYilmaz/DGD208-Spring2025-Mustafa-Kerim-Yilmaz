@@ -1,0 +1,14 @@
+C:\Users\enis6\OneDrive\Masaüstü\VS code\bin\Debug\net8.0\VS code.exe
+C:\Users\enis6\OneDrive\Masaüstü\VS code\bin\Debug\net8.0\VS code.deps.json
+C:\Users\enis6\OneDrive\Masaüstü\VS code\bin\Debug\net8.0\VS code.runtimeconfig.json
+C:\Users\enis6\OneDrive\Masaüstü\VS code\bin\Debug\net8.0\VS code.dll
+C:\Users\enis6\OneDrive\Masaüstü\VS code\bin\Debug\net8.0\VS code.pdb
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.AssemblyInfoInputs.cache
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.AssemblyInfo.cs
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.csproj.CoreCompileInputs.cache
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.dll
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\refint\VS code.dll
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.pdb
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\VS code.genruntimeconfig.cache
+C:\Users\enis6\OneDrive\Masaüstü\VS code\obj\Debug\net8.0\ref\VS code.dll
