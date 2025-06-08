@@ -16,9 +16,9 @@ public class Pet
 
 
 
-    // Pet's name ( "Buddy", "Fluffy")
+    
     public string Name { get; set; }
-    // Type of the pet ( Dog, Cat)
+    
     public PetType Type { get; set; }
     public int Hunger { get; set; } = 50;
     public int Sleep { get; set; } = 50;
