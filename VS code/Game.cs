@@ -165,6 +165,7 @@ public class Game
         var petMenu = new Menu<Pet>("Your Pets", _pets, p => p.ToString());
         var selectedPet = petMenu.ShowAndGetSelection();
     }
+    
     private async Task UseItemOnPet()
     {
         if (_pets.Count == 0)
